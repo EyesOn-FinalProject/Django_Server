@@ -75,8 +75,15 @@ WSGI_APPLICATION = 'djangoserver.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+
+        'ENGINE': 'django.db.backends.mysql',  # mysqlclient librarly 설치
+        'NAME': 'mariaDB',
+        'USER': 'root',  # root
+        'PASSWORD': 'test',  # 비밀번호(반드시 str이어야 합니다.)
+        'HOST': '15.164.46.54',  # 공백으로 냅두면 default localhost
+        'PORT': '3306'  # 공백으로 냅두면 default 3306
     }
 }
 
