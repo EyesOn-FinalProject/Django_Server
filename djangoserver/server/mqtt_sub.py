@@ -4,15 +4,13 @@ from django.apps import AppConfig
 import paho.mqtt.client as mqtt
 
 
-
-
 class MyMqtt(Thread):
-    def __init__(self,client):
+    def __init__(self, client):
         super().__init__()
         self.client = mqtt.Client()
 
     def run(self):
-        self.client.connect("192.168.0.202", 1883, 60)
+        self.client.connect("15.164.46.54", 1883, 60)
         self.client.on_connect = self.on_connect
         self.client.on_message = self.on_message
         self.client.loop_forever()
